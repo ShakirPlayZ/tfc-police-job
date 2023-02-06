@@ -6,3 +6,5 @@
 You still need an Account for their System.
 
 * Command: /pdjob (Displays the Webinterface in Game)
+
+* Install the Folder into src/core/plugins/
