@@ -1,9 +1,9 @@
 # tfc-police-job
 
-- A Simple Plugin for the Athena Framework (Version 4)
-- All what it does is to give your Faction a Command for Displaying a Webview for VPC-UCP (https://pc.copnet.li/) system.
+- This Plugin is still work in Progress...
 
-You still need an Account for their System.
+- A Simple Plugin for the Athena Framework (Version 4)
+- All what it does is to give your Faction a Command for Displaying a Webview for VPC-UCP Copnet (https://pc.copnet.li/) system. (You still need an Account for their System. Register here: https://ucp.li/register.php)
 
 * Command: /pdjob (Displays the Webinterface in Game)
 
