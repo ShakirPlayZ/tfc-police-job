@@ -6,8 +6,29 @@
             <Button color="red" @click="close" class="mb-10 mt-2 ml-2 close-button">Schließen</Button>
         </div>
 
+        <div class="players" v-if="false">
+            <div class="player" style="background-color: #1a5b1c">
+                <small class="info overline">Bürger</small>
+                <small class="info overline">Aktion</small>
+            </div>
+            <div v-for="(player, index) in players" :key="index" class="player">
+                <div class="info overline">
+                    <span>{{ player.name }}</span>
+                </div>
+
+                <Button
+                    color="red"
+                    class="refresh-button"
+                    title="Wiederbeleben"
+                    @click="treatPlayer(player.id, 'reanimate')"
+                >
+                    <icon :icon="'icon-hospital-cross'" :size="0" class="icon-hospital-cross">icon-hospital-cross</icon>
+                </Button>
+            </div>
+        </div>
+
         <div style="margin: auto; height: calc(87%); width: calc(99% - 20px)">
-            <iframe src="https://pc.copnet.li/" width="100%" height="100%">its not working...</iframe>
+            <iframe src="https://copnet.ch/" width="100%" height="100%">its not working...</iframe>
         </div>
     </div>
 </template>
@@ -72,6 +93,12 @@ export default defineComponent({
         },
         refresh() {
             WebViewEvents.emitServer(TfcPoliceWebViewEvents.WebViewToServer.REQUEST_REFRESH);
+        },
+        treatPlayer(targetID: any, treatingOption: string) {
+            if (treatingOption === 'reanimate') {
+                WebViewEvents.emitServer(TFCPOLICE_EVENTS.TO_SERVER.REANIMATEPLAYER, targetID);
+                return;
+            }
         },
     },
 });
